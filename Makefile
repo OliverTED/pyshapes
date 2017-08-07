@@ -1,10 +1,16 @@
 
+SHELL := /bin/bash
 
 
+.PHONY:  tests create-env delete-env
 
-delete-virtualenv:
+
+tests:
+	source ./.activate.sh; python -m pytest -v --cov=pyshapes tests/
+
+create-env:
+	bash ./.create-env-miniconda.sh
+
+delete-env:
 	rm -rf .env
-	rm .activate.sh
-
-freeze:
-	pip freeze > requirements.txt
+	rm -f .activate.sh

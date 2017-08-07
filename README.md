@@ -6,3 +6,6 @@ Some python shape matching methods
 [![Build Status](https://travis-ci.org/OliverTED/pyshapes.svg?branch=master)](https://travis-ci.org/OliverTED/pyshapes)
 
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/OliverTED)
+
+
+[Read the docs](http://pyshapes.readthedocs.io/en/latest/)

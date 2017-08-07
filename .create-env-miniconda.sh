@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# set -euo pipefail
+# IFS=$'\n\t'
+
 rm -rf .env
 rm -f .activate.sh
 
@@ -13,14 +18,20 @@ conda update -q conda
 # Useful for debugging any issues with conda
 conda info -a
 
-PACKAGES="scipy numpy cvxopt scikit-learn pytest pip"
+# CONDA_PARAM=(-c cvxgrp -c mosek -c menpo)
+PACKAGES=" scipy numpy cvxopt scikit-learn pytest pip sphinx sphinx-autobuild"
+PACKAGES="-c menpo $PACKAGES mayavi pyface traitsui pyqt=4"
 
-conda create -q -n test-env python=3.5 $PACKAGES
+
+conda create -q -n test-env python=3.4
 
 echo "source $(pwd)/.env/miniconda/bin/activate test-env" > .activate.sh
 source ./.activate.sh
 # source activate test-env
 
-pip install pytest-cov
-pip install coveralls
+conda install $PACKAGES
 
+# pip install pytest-cov
+# pip install coveralls
+# pip install sphinx-autobuild
+pip install pytest-cov coveralls sphinx-autobuild

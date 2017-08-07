@@ -4,12 +4,14 @@ python:
   - "3.5"
 
 install:
-  - bash ./.create-env-miniconda.sh
-  - source ./.activate.sh
+  - make create-env
+  - # bash ./.create-env-miniconda.sh
+  - # source ./.activate.sh
 
 script:
-  - python -m pytest -v --cov=pyshapes tests/
+  - # python -m pytest -v --cov=pyshapes tests/
   - # py.test -v --cov=pyshapes tests/
+  - make tests
 
 after_success:
   - coveralls
