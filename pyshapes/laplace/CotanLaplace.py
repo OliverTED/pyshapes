@@ -38,7 +38,19 @@ class CotanLaplace(LaplaceOperator):
     wi = sqrt(vertex_weights)*vi
     """
 
-    def __init__(self, tris, points, edge_lengths=None):
+    def __init__(self, tris, points):
+        """Create a cotan laplace operator.
+
+        Extended.
+
+        Args:
+            tris (np.array): triangles (m x 3)
+            points (np.array): vertex positions (n x 3)
+
+        Returns:
+            CotanLaplace: the Laplace operator
+        """
+
         nv = points.shape[0]
 
         vertIds, _, _, _, _, _, gamma = \

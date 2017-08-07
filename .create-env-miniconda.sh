@@ -19,7 +19,7 @@ conda update -q conda
 conda info -a
 
 # CONDA_PARAM=(-c cvxgrp -c mosek -c menpo)
-PACKAGES=" scipy numpy cvxopt scikit-learn pytest pip sphinx sphinx-autobuild"
+PACKAGES=" scipy numpy cvxopt scikit-learn pytest pip sphinx"
 PACKAGES="-c menpo $PACKAGES mayavi pyface traitsui pyqt=4"
 
 
@@ -31,7 +31,4 @@ source ./.activate.sh
 
 conda install $PACKAGES
 
-# pip install pytest-cov
-# pip install coveralls
-# pip install sphinx-autobuild
 pip install pytest-cov coveralls sphinx-autobuild
